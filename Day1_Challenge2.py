@@ -15,7 +15,7 @@ NUMBER_STRINGS = [
 
 sum = 0
 
-with open("D1_data.txt", "r") as f:
+with open("Data/D1_data.txt", "r") as f:
     calibration_data = f.readlines()
     for line in calibration_data:
         # Remove EOF characters

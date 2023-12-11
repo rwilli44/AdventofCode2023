@@ -3,7 +3,7 @@ from typing import Iterator, Match
 
 # Read the input and save it as a list of strings
 data: list[str] = []
-with open("D3_data.txt", "r") as f:
+with open("Data/D3_data.txt", "r") as f:
     data = f.readlines()
 
 # var to save the result to

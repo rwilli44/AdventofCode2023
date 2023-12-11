@@ -32,7 +32,7 @@ def find_matches(scratch_card: list[str], winning_numbers: list[str]) -> int:
 # Stores the input as rows of two lists of strings
 data: list[list[str]] = []
 
-with open("D4_data.txt", "r") as f:
+with open("Data/D4_data.txt", "r") as f:
     file_contents = f.readlines()
     for line in file_contents:
         # Remove the Game number info from the string

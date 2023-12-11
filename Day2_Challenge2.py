@@ -46,7 +46,7 @@ def findMinNeeded(game: list) -> int:
 
 SUM: int = 0
 
-with open("./D2_data.txt", "r") as f:
+with open("Data/D2_data.txt", "r") as f:
     games: list = f.readlines()
     for line in games:
         # split each row into a list

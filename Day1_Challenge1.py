@@ -1,6 +1,6 @@
 import re
 
-with open("./D1_data.txt", "r") as f:
+with open("Data/D1_data.txt", "r") as f:
     calibration_data = f.readlines()
     sum = 0
     for line in calibration_data:
