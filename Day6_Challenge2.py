@@ -23,7 +23,7 @@ def get_distances(race_time: int | str, record_time: int) -> int:
     return distances
 
 
-with open("D6_data.txt", "r") as f:
+with open("Data/D6_data.txt", "r") as f:
     # get the string for the race time
     times = f.readline()
     # get the string of distance record

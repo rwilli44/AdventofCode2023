@@ -57,7 +57,7 @@ def total_ways_to_win(possible_wins: list[int]) -> int:
     return total
 
 
-with open("D6_data.txt", "r") as f:
+with open("Data/D6_data.txt", "r") as f:
     # get the string of race times
     times = f.readline()
     # get the string of distance records
