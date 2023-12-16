@@ -1,5 +1,4 @@
 import re
-import pprint
 
 # Read the input and save it as a list of strings
 data: list[str] = []
@@ -37,7 +36,7 @@ def expand_columns(column_index: int, star_map: list[str]) -> None:
     for index, row in enumerate(star_map):
         # insert a new copy of each row with using concatenationg to
         # add a . at the given column index
-        star_map[index] = row[: column_index + 1] + "." + row[column_index + 1 :]
+        star_map[index] = row[: column_index + 1] + "!" + row[column_index + 1 :]
 
 
 # variables to hold the locations of galaxy-free columns and rows
@@ -59,9 +58,10 @@ for i, row in enumerate(data):
 
 # For each column to expand, pass the index and the map to the
 # expand_columns function
-for i in columns_to_expand:
-    expand_columns(i, data)
-
+for j, column_index in enumerate(columns_to_expand):
+    if j > 0:
+        column_index += +j
+    expand_columns(column_index, data)
 # Insert an extra for for each index in the rows_to_expand list
 for i in rows_to_expand:
     row_to_add = "." * len(data[0])
@@ -83,17 +83,7 @@ for i, galaxy in enumerate(galaxies):
         x_difference = abs(coordinates[0] - galaxy[0])
         y_difference = abs(coordinates[1] - galaxy[1])
         shortest_distance = x_difference + y_difference
-        if x_difference == 1:
-            shortest_distance = shortest_distance - 1
-        if y_difference == 1:
-            shortest_distance = shortest_distance - 1
-        # if coordinates[0] == 0 or galaxy[0] == 0:
-        #     shortest_distance = shortest_distance - 1
-        # if coordinates[1] == 0 or galaxy[1] == 0:
-        #     shortest_distance = shortest_distance - 1
 
-        print(i, shortest_distance)
         total_distances += shortest_distance
 
-print(galaxies)
-pprint.pprint(data)
+print(total_distances)
